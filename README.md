@@ -75,7 +75,6 @@
 ```
  - React 앱 생성 및 마크업 개발, 기본적인 CRUD에 대한 이해
  - Local Storage의 동작 방식 이해 및 활용
- - CSR의 정적호스팅 이해 및 build & deploy 경험
 ```
 
 ### _상세 요구사항_
@@ -91,17 +90,11 @@
   - React를 사용하여 구현합니다.
     > 클래스 형이 아닌 **함수형**을 사용합니다. ( _useEffect, useState 활용_ )
   - 스타일( CSS )을 생각하지 않고 개발합니다. ( _추후 미션에 추가_ )
-- React 앱을 build 하고 deploy 합니다.
-  - 정적 호스팅은 S3를 사용합니다.
-  - S3 버킷은 **make-frontend-onboarding**를 사용합니다.
-    > 버킷 내부에 본인 닉네임으로 directory를 만들고, 그 안에 배포하도록 합니다.
-  - 그 외 기타 설정은 기본값을 사용하되 필요에 따라 변경할 수 있습니다.
 
 ### _선수지식_
 
 - React (TypeScript)
 - React hooks
-- S3
 - Local Storage
 
 <br /><br />
@@ -180,12 +173,13 @@
   - `share component`를 사용해서 재사용성을 높입니다.
     - `share component`는 `src/components/share/`에 작성합니다.
     - 디자인에 있는 `Header`를 포함한 `Layout component`는 필수사항입니다.
-    - 나머지는 자유롭게 `component`화 하도록 합니다.
+    - 나머지는 **_재사용성 및 유지보수성 증가_** 라는 목적에 맞게 자유롭게 `component`화 하도록 합니다.
   - 요구사항 이외의 directory 구조는 본인에게 편한 방식으로 만들어도 괜찮습니다 :)
 
 ### _선수지식_
 
-- React Component 작성
+- React Component
+- React Design Pattern
 - CSS in JS ( styled-components )
 - Figma
 
@@ -204,13 +198,63 @@
 ### _목적_
 
 ```
- - Flux구조에 대한 이해 및 redux 활용
+ - Flux구조에 대한 이해 및 redux 활용법 익히기
 ```
 
 ### _상세 요구사항_
 
+- Functional Requirements
+  - 페이지에서 관리하던 변수들을 모두 전역으로 관리합니다.
+    - `redux`를 사용하여 전역변수를 관리하도록 변경합니다.
+  - `redux` 구현 시 `Ducks Pattern`을 적용합니다. [What is the Ducks Pattern](https://dinn.github.io/web/redux-ducks-pattern/)
+    - `/src/store`에 `configStore.ts`를 통해 `store`를 정의합니다.
+    - `/src/store/module`안에 `todo.ts`, `user.ts`를 `Ducks Pattern`에 따라서 작성합니다.
+      - `todo.ts` : TodoList 관리
+      - `user.ts` : 유저(자기 자신) 정보 관리
+  - `Flux` 구조에 대해서 이해할 수 있도록 합니다.
+    - [참고 링크1](https://velog.io/@dksgyals1/Flux-%EA%B7%B8%EB%A6%AC%EA%B3%A0-Redux%EC%99%80-Mobx)
+  - 요구사항 이외의 directory 구조는 본인에게 편한 방식으로 만들어도 괜찮습니다 :)
+
 ### _선수지식_
 
 - Flux ( redux )
+- Ducks Pattern
 
 <br /><br />
+
+## 🎱️ **Bonus Mission** : _만든 TodoList를 배포해보자_
+
+### _목표_
+
+```
+ 실제 웹사이트를 배포하여 외부에서 접근 가능하도록 하고, 배포 자동화를 구축합니다.
+```
+
+### _목적_
+
+```
+ - 웹사이트 배포 경험
+ - CSR의 정적호스팅 이해 및 build & deploy 경험
+ - Github Actions를 활용한 CI/CD 적용
+ - favicon 및 title 적용, <head> 태그에 대한 이해
+```
+
+### _상세 요구사항_
+
+- Functional Requirements
+  - React 앱을 build 하고 deploy 합니다.
+    - 정적 호스팅은 S3를 사용합니다.
+    - S3 버킷은 **make-frontend-onboarding**를 사용합니다.
+      > 버킷 내부에 본인 닉네임으로 directory를 만들고, 그 안에 배포하도록 합니다.
+    - 그 외 기타 설정은 기본값을 사용하되 필요에 따라 변경할 수 있습니다.
+  - `.github/workflows`를 활용하여 CI/CD 스크립트를 작성합니다. [CI/CD란?](https://jud00.tistory.com/entry/CICD%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)
+    - [Github Actions](https://meetup.toast.com/posts/286)
+  - `favicon` 및 `title`을 본인의 스타일에 맞게 적용해보세요! :)
+
+### _선수지식_
+
+- CI/CD
+- Github Actions
+- S3
+- 정적 호스팅
+  [CSR과 SSR + 정적/동적 웹페이지 관련 자료](https://velog.io/@cjw/CSRSSR-SPAMPA)
