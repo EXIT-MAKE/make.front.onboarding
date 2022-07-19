@@ -1,22 +1,15 @@
 // PRESENTER(Markup / stateless)
-import styled from "styled-components";
 import TodoItem from "../todo-item/TodoItem";
 import { TodoListStyle } from "./TodosList.style";
-import {
-  TodosProps,
-  TodoProps,
-  TodosListPresenterTypes,
-} from "./TodoList.type";
+import { TodosProps, TodosListPresenterTypes } from "./TodoList.type";
 
 function TodosListPresenter({
   todos,
   setTodos,
   handleAddTodo,
   text,
-  setText,
   handleInputChange,
-}: TodosProps & TodosListPresenterTypes): // { }: TodosListPresenterTypes
-JSX.Element {
+}: TodosProps & TodosListPresenterTypes): JSX.Element {
   return (
     <TodoListStyle.Wrapper>
       <TodoListStyle.Title>Todo ()</TodoListStyle.Title>

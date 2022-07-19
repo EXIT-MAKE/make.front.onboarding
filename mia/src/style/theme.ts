@@ -1,4 +1,4 @@
-import { DefaultTheme, ThemeContext } from "styled-components";
+import { DefaultTheme } from "styled-components";
 
 const theme: DefaultTheme = {
   colors: {

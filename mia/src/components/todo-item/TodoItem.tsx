@@ -1,10 +1,8 @@
-import { dir } from "console";
 import React, { useState, useEffect, useRef } from "react";
 import {
   removeStorageItem,
   setStorageItem,
 } from "../../utils/windowLocalStorage";
-import { TodoProps } from "../todo-list/TodoList.type";
 import TodoItemPresenter from "./TodoItem.presenter";
 
 function TodoItem({ id, todos, todo, setTodos }) {

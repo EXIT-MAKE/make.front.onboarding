@@ -1,11 +1,7 @@
 import UserInfoPresenter from "./UserInfo.presenter";
 
 function UserInfo() {
-  return (
-    <>
-      <UserInfoPresenter />
-    </>
-  );
+  return <UserInfoPresenter />;
 }
 
 export default UserInfo;

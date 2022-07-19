@@ -18,7 +18,3 @@ export const HeaderStyle = {
     justify-content: space-between;
   `,
 };
-
-export const HeaderWrapperProps = {};
-
-export const HeaderInnerWrapper = {};

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import TodoItemPresenter from "./TodoItem.presenter";
 
 export const TodoItemStyle = {
   CardWrapper: styled.div`
