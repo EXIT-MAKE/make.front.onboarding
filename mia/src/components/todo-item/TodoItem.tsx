@@ -12,7 +12,7 @@ function TodoItem({ id, todos, todo, setTodos }) {
   );
 
   // ----- 수정
-  const editInputRef = useRef(null);
+  const editInputRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (edit) {
