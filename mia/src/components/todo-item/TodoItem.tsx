@@ -6,7 +6,7 @@ import {
 import TodoItemPresenter from "./TodoItem.presenter";
 
 function TodoItem({ id, todos, todo, setTodos }) {
-  const [edit, setEditTodo] = useState(false);
+  const [edit, setEditTodo] = useState<boolean>(false);
   const [newText, setNewText] = useState<string>(
     todos?.content ? todos.content : ""
   );
