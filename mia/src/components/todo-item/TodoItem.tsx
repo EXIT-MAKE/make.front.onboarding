@@ -54,18 +54,16 @@ function TodoItem({ id, todos, todo, setTodos }) {
   };
 
   return (
-    <div>
-      <TodoItemPresenter
-        edit={edit}
-        todo={todo}
-        handleEditTodo={handleEditTodo}
-        handleRemoveTodo={handleRemoveTodo}
-        handleNewInputChange={handleNewInputChange}
-        newText={newText}
-        handleUpdateButton={handleUpdateButton}
-        editInputRef={editInputRef}
-      />
-    </div>
+    <TodoItemPresenter
+      edit={edit}
+      todo={todo}
+      handleEditTodo={handleEditTodo}
+      handleRemoveTodo={handleRemoveTodo}
+      handleNewInputChange={handleNewInputChange}
+      newText={newText}
+      handleUpdateButton={handleUpdateButton}
+      editInputRef={editInputRef}
+    />
   );
 }
 

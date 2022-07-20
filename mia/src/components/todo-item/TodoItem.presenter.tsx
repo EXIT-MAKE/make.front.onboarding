@@ -26,7 +26,7 @@ function TodoItemPresenter({
               value={newText}
               onChange={handleNewInputChange}
               ref={editInputRef}
-            ></TodoItemStyle.ModalTextArea>
+            />
             <TodoItemStyle.ModalButton onClick={handleUpdateButton}>
               완료
             </TodoItemStyle.ModalButton>

@@ -32,7 +32,7 @@ function TodosListPresenter({
             todos={todos}
             todo={todo}
             setTodos={setTodos}
-          ></TodoItem>
+          />
         );
       })}
     </TodoListStyle.Wrapper>
