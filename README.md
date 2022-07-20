@@ -183,6 +183,8 @@
 - CSS in JS ( styled-components )
 - Figma
 
+#### 참고자료 : [TodoList made by DUDO(미완)](https://github.com/leejw0803/make-onboarding-todolist)
+
 <br /><br />
 
 ## 🏐 **Mission 4** : _useState를 제거해보자_
