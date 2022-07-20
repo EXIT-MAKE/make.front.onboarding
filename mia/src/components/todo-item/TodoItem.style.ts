@@ -55,7 +55,6 @@ export const TodoItemStyle = {
     text-decoration: none;
     border: none;
     border-radius: 4px 4px 0 0;
-    display: inline-block;
     width: 40px;
     height: 24px;
     background-color: ${({ theme: { colors } }) => colors.grey900};
@@ -106,7 +105,6 @@ export const TodoItemStyle = {
   ModalLabel: styled.label.attrs({
     for: "edit-content",
   })`
-    display: block;
     font-size: 14px;
     color: ${({ theme: { colors } }) => colors.grey600};
   `,
@@ -122,7 +120,6 @@ export const TodoItemStyle = {
     border: 1px solid ${({ theme: { colors } }) => colors.grey200};
   `,
   ModalButton: styled.button`
-    display: block;
     border: none;
     border-radius: 8px;
     position: absolute;
