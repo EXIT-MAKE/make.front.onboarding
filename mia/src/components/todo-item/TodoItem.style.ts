@@ -5,7 +5,7 @@ export const TodoItemStyle = {
     position: relative;
     width: 380px;
     height: 230px;
-    margin: 16px 18px;
+    margin: 0 auto;
     box-shadow: 0px 4px 12px rgba(59, 69, 88, 0.08);
     border-radius: 12px;
     background-color: ${({ theme: { colors } }) => colors.white};
