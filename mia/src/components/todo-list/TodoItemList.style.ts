@@ -5,7 +5,7 @@ export const TodoListStyle = {
     position: relative;
     margin: 176px 0 100px 50px;
     width: 425px;
-    height: 796px;
+    min-height: 796px;
     background-color: ${({ theme: { colors } }) => colors.white};
     box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.06);
     border-radius: 20px;
