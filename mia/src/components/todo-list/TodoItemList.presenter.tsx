@@ -1,15 +1,15 @@
 // PRESENTER(Markup / stateless)
 import TodoItem from "../todo-item/TodoItem";
-import { TodoListStyle } from "./TodosList.style";
-import { TodosProps, TodosListPresenterTypes } from "./TodoList.type";
+import { TodoListStyle } from "./TodoItemList.style";
+import { TodoListPresenterTypes } from "./TodoItemList.type";
 
-function TodosListPresenter({
-  todos,
-  setTodos,
+function TodoItemListPresenter({
+  todoList,
+  setTodoList,
   handleAddTodo,
   text,
   handleInputChange,
-}: TodosProps & TodosListPresenterTypes): JSX.Element {
+}: TodoListPresenterTypes): JSX.Element {
   return (
     <TodoListStyle.Wrapper>
       <TodoListStyle.Title>Todo ()</TodoListStyle.Title>
@@ -23,15 +23,15 @@ function TodosListPresenter({
       <TodoListStyle.AddButton onClick={handleAddTodo}>
         <TodoListStyle.Plus />
       </TodoListStyle.AddButton>
-      {todos?.map((todo, i) => {
+      {todoList?.map((todo, i) => {
         const id: number = i;
         return (
           <TodoItem
             key={i}
             id={id}
-            todos={todos}
+            todoList={todoList}
             todo={todo}
-            setTodos={setTodos}
+            setTodoList={setTodoList}
           />
         );
       })}
@@ -39,4 +39,4 @@ function TodosListPresenter({
   );
 }
 
-export default TodosListPresenter;
+export default TodoItemListPresenter;
