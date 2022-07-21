@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/header/Header";
-import TodoList from "./components/todo-list/TodoList";
+import TodoItemList from "./components/todo-list/TodoItemList";
 import { ThemeProvider } from "styled-components";
 import theme from "./style/theme";
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <TodoList />
+        <TodoItemList />
       </ThemeProvider>
     </>
   );

@@ -11,11 +11,11 @@ export const TodoListStyle = {
     border-radius: 20px;
   `,
   Title: styled.div`
-    display: inline-block;
     font-weight: ${({ theme: { fontWeight } }) => fontWeight.title1};
     color: ${({ theme: { colors } }) => colors.makeBlue};
     font-size: 20px;
-    margin: 30px 20px 10px 20px;
+    padding-top: 30px;
+    margin: 0 20px;
   `,
   AddButton: styled.button`
     position: absolute;

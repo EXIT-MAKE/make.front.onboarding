@@ -1,5 +1,5 @@
 import { MouseEventHandler } from "react";
-import { TodoProps } from "../../todo-list/TodoList.type";
+import { TodoProps } from "../../todo-list/TodoItemList.type";
 
 export type MenuPresenterProps = {
   // todo: TodoProps[];
