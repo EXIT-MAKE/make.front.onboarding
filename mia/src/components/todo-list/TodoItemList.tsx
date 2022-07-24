@@ -1,5 +1,5 @@
 // CONTAINER(logic / stateful)
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import TodoItemListPresenter from "./TodoItemList.presenter";
 import { setStorageItem } from "../../utils/windowLocalStorage";
 import { getStorageItem } from "../../utils/windowLocalStorage";
@@ -9,20 +9,21 @@ function TodoItemList(): JSX.Element {
   let [todoList, setTodoList] = useState<TodoProps[]>([]);
   let [text, setText] = useState<string>("");
 
+  const testSetTodoList = useCallback(async () => {
+    const localTodoList = await getStorageItem("content");
+    if (localTodoList === null) return;
+    setTodoList(localTodoList);
+  }, [getStorageItem]);
+
   useEffect(() => {
-    async function testSetTodoList() {
-      const localTodoList = await getStorageItem("content");
-      if (localTodoList === null) return;
-      return setTodoList(localTodoList);
-    }
     testSetTodoList();
-  }, []);
+  }, [testSetTodoList]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
 
-  const handleAddTodo = async () => {
+  const handleAddTodo = async (e) => {
     if (text.length <= 0) return;
     else {
       setTodoList([...todoList, { index: todoList.length, content: text }]);
