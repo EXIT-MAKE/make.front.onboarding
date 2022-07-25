@@ -15,6 +15,6 @@ export type TodoListPresenterTypes = {
 // };
 
 export type TodoProps = {
-  index: number;
+  id: number;
   content: string;
 };

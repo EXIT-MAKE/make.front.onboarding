@@ -5,7 +5,7 @@ import {
 } from "../../utils/windowLocalStorage";
 import TodoItemPresenter from "./TodoItem.presenter";
 
-function TodoItem({ id, todoList, todo, setTodoList }) {
+function TodoItem({ index, todoList, todo, setTodoList }) {
   const [edit, setEditTodo] = useState<boolean>(false);
   const [newText, setNewText] = useState<string>(
     todoList?.content ? todoList.content : ""
@@ -24,13 +24,15 @@ function TodoItem({ id, todoList, todo, setTodoList }) {
     setEditTodo(true);
   };
 
-  const handleUpdateButton = () => {
-    console.log(todo.index);
-    console.log(id);
+  const handleNewInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewText(e.target.value);
+  };
 
+  const handleUpdateButton = () => {
     const newTodoList = todoList.map((todo) => ({
       ...todo,
-      content: todo.index === id ? newText : todo.content,
+      content:
+        index !== todo.id && index === todo.id - 1 ? newText : todo.content,
     }));
 
     setTodoList(newTodoList);
@@ -47,10 +49,6 @@ function TodoItem({ id, todoList, todo, setTodoList }) {
     setTodoList(result);
     removeStorageItem("content");
     setStorageItem("content", result);
-  };
-
-  const handleNewInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewText(e.target.value);
   };
 
   return (

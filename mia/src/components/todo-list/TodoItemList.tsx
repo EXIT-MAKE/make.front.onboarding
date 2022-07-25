@@ -26,21 +26,10 @@ function TodoItemList(): JSX.Element {
   const handleAddTodo = async (e) => {
     if (text.length <= 0) return;
     else {
-      setTodoList([...todoList, { index: todoList.length, content: text }]);
+      setTodoList([...todoList, { id: todoList.length + 1, content: text }]);
       await setStorageItem("content", todoList);
     }
   };
-
-  // const handleAddTodo = () => {
-  //   return new Promise(function (resolve) {
-  //     if (text.length <= 0) return;
-  //     else {
-  //       setTodoList([{ index: 0, content: text }]);
-  //       setTodoList([...todoList, { index: todoList.length, content: text }]);
-  //       setStorageItem("content", todoList);
-  //     }
-  //   });
-  // };
 
   return (
     <TodoItemListPresenter
