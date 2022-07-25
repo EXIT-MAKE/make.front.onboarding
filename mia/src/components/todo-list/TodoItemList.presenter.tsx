@@ -24,11 +24,11 @@ function TodoItemListPresenter({
         <TodoListStyle.Plus />
       </TodoListStyle.AddButton>
       {todoList?.map((todo, i) => {
-        const id: number = i;
+        // const id: number = i;
         return (
           <TodoItem
             key={i}
-            id={id}
+            index={i}
             todoList={todoList}
             todo={todo}
             setTodoList={setTodoList}
