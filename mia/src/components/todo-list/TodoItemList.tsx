@@ -24,9 +24,12 @@ function TodoItemList(): JSX.Element {
   };
 
   const handleAddTodo = async (e) => {
+    let id: number =
+      todoList.length !== 0 ? todoList[todoList.length - 1].id + 1 : 1;
+    // let id: number = 1;
     if (text.length <= 0) return;
     else {
-      setTodoList([...todoList, { id: todoList.length + 1, content: text }]);
+      setTodoList([...todoList, { id: id, content: text }]);
       await setStorageItem("content", todoList);
     }
   };
