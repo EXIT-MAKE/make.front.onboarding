@@ -46,9 +46,7 @@ function TodoItemPresenter({
             <TodoItemStyle.EditButton onClick={() => handleEditTodo()}>
               수정
             </TodoItemStyle.EditButton>
-            <TodoItemStyle.DeleteButton
-              onClick={() => handleRemoveTodo(todo.index)}
-            >
+            <TodoItemStyle.DeleteButton onClick={() => handleRemoveTodo()}>
               삭제
             </TodoItemStyle.DeleteButton>
           </TodoItemStyle.CardDropButtons>

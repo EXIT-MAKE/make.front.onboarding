@@ -4,7 +4,7 @@ export type TodoListPresenterTypes = {
   text: string;
   setText: React.Dispatch<React.SetStateAction<string>>;
   handleInputChange: ChangeEventHandler<HTMLElement>;
-  handleAddTodo: (e) => void;
+  handleAddTodo: () => void;
   todoList: TodoProps[];
   setTodoList: React.Dispatch<React.SetStateAction<TodoProps[]>>;
 };

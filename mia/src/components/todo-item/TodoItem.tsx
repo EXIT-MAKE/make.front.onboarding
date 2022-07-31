@@ -31,8 +31,7 @@ function TodoItem({ index, todoList, todo, setTodoList }) {
   const handleUpdateButton = () => {
     const newTodoList = todoList.map((todo) => ({
       ...todo,
-      content:
-        index !== todo.id && index === todo.id - 1 ? newText : todo.content,
+      content: todo.id === todoList[index].id ? newText : todo.content,
     }));
 
     setTodoList(newTodoList);

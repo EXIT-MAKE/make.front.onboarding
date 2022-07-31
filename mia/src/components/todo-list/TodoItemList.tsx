@@ -23,10 +23,9 @@ function TodoItemList(): JSX.Element {
     setText(e.target.value);
   };
 
-  const handleAddTodo = async (e) => {
+  const handleAddTodo = async () => {
     let id: number =
       todoList.length !== 0 ? todoList[todoList.length - 1].id + 1 : 1;
-    // let id: number = 1;
     if (text.length <= 0) return;
     else {
       setTodoList([...todoList, { id: id, content: text }]);
