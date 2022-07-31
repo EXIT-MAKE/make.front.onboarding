@@ -40,9 +40,9 @@ function TodoItem({ index, todoList, todo, setTodoList }) {
   };
 
   // ----- 삭제
-  const handleRemoveTodo = (id) => {
+  const handleRemoveTodo = () => {
     const result = todoList.filter((todo) => {
-      return todo.index !== id;
+      return todo.id !== todoList[index].id;
     });
 
     setTodoList(result);
