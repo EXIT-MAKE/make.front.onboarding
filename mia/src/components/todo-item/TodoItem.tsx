@@ -31,8 +31,7 @@ function TodoItem({ index, todoList, todo, setTodoList }) {
   const handleUpdateButton = () => {
     const newTodoList = todoList.map((todo) => ({
       ...todo,
-      content:
-        index !== todo.id && index === todo.id - 1 ? newText : todo.content,
+      content: todo.id === todoList[index].id ? newText : todo.content,
     }));
 
     setTodoList(newTodoList);
@@ -41,9 +40,9 @@ function TodoItem({ index, todoList, todo, setTodoList }) {
   };
 
   // ----- 삭제
-  const handleRemoveTodo = (id) => {
+  const handleRemoveTodo = () => {
     const result = todoList.filter((todo) => {
-      return todo.index !== id;
+      return todo.id !== todoList[index].id;
     });
 
     setTodoList(result);
